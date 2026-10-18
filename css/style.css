@@ -245,23 +245,26 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 
 /* ---------- Services ---------- */
 .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.section-services { background: linear-gradient(180deg, var(--blue-soft) 0%, var(--white) 100%); }
 .service-card {
-  background: #111829; border: 1px solid #1f2840; border-radius: var(--radius); padding: 30px 24px;
-  position: relative; overflow: hidden; transition: transform .4s var(--ease), border-color .4s;
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px 24px;
+  position: relative; overflow: hidden; box-shadow: var(--shadow);
+  transition: transform .4s var(--ease), border-color .4s, box-shadow .4s;
 }
 .service-card::before {
   content: ""; position: absolute; inset: 0; background: var(--grad); opacity: 0; transition: opacity .4s; z-index: 0;
 }
 .service-card > * { position: relative; z-index: 1; }
-.service-card:hover { transform: translateY(-8px); border-color: var(--blue); }
+.service-card:hover { transform: translateY(-8px); border-color: var(--blue); box-shadow: var(--shadow-lg); }
 .service-card:hover::before { opacity: 1; }
-.service-card:hover p { color: rgba(255, 255, 255, .9); }
+.service-card:hover h3 { color: var(--white); }
+.service-card:hover p { color: rgba(255, 255, 255, .92); }
 .service-card:hover .s-icon { background: var(--white); }
 .service-card:hover .s-icon svg { stroke: var(--blue); }
-.s-icon { width: 52px; height: 52px; display: grid; place-items: center; border-radius: var(--radius); background: rgba(47, 107, 255, .14); margin-bottom: 20px; transition: .4s; }
-.s-icon svg { width: 26px; height: 26px; fill: none; stroke: var(--blue-2); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: .4s; }
-.service-card h3 { color: var(--white); font-size: 18px; margin-bottom: 10px; }
-.service-card p { font-size: 14px; color: #93a0b8; transition: color .4s; }
+.s-icon { width: 52px; height: 52px; display: grid; place-items: center; border-radius: var(--radius); background: var(--blue); margin-bottom: 20px; transition: .4s; }
+.s-icon svg { width: 26px; height: 26px; fill: none; stroke: var(--white); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: .4s; }
+.service-card h3 { color: var(--black); font-size: 18px; margin-bottom: 10px; transition: color .4s; }
+.service-card p { font-size: 14px; color: var(--gray); transition: color .4s; }
 .services-grid .reveal:nth-child(4n+2) { transition-delay: .08s; }
 .services-grid .reveal:nth-child(4n+3) { transition-delay: .16s; }
 .services-grid .reveal:nth-child(4n+4) { transition-delay: .24s; }
